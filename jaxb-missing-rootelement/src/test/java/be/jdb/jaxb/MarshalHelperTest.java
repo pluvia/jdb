@@ -42,6 +42,10 @@ public class MarshalHelperTest {
 
 	@Test
 	public void testMarshal() throws JAXBException {
-		assertTrue(MarshalHelper.Marshal(car).contains("Passat"));
+		String xml = MarshalHelper.Marshal(car);
+		assertTrue(xml.contains("<?xml"));
+		assertTrue(xml.contains("ABC-123"));
+		assertTrue(xml.contains("Passat"));
+		assertTrue(xml.contains("Volkswagen"));
 	}
 }

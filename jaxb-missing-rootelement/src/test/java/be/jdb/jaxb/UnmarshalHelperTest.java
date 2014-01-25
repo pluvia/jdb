@@ -1,5 +1,6 @@
 package be.jdb.jaxb;
 
+import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
 import static org.junit.Assert.fail;
 
@@ -40,6 +41,6 @@ public class UnmarshalHelperTest {
 	@Test
 	public void testUnmarshal() throws JAXBException {
 		Car car = UnmarshalHelper.Unmarshal(file);
-		assertTrue(car.toString().contains("Golf"));
+		assertEquals(car.toString(), "Car [make=Golf, manufacturer=Volkswagen, id=DEF-456]");
 	}
 }
