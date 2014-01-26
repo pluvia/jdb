@@ -1,6 +1,5 @@
 package be.jdb.jaxb;
 
-import java.io.File;
 import java.io.StringWriter;
 
 import javax.xml.bind.JAXBContext;
@@ -29,8 +28,6 @@ public class MarshalHelper {
 		jaxbMarshaller.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, true);
 
 		jaxbMarshaller.marshal(car, stringWriter);
-		File file = new File("./src/main/resources/xml/passat.xml");
-		jaxbMarshaller.marshal(car, file);
 
 		String result = stringWriter.toString();
 		logger.info(result);
