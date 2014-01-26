@@ -43,7 +43,7 @@ public class MarshalHelper {
 		// format the XML output
 		jaxbMarshaller.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, true);
 
-		QName qName = new QName("be.jdb.jaxb.model", "Car");
+		QName qName = new QName("be.jdb.jaxb.model", "car");
 		JAXBElement<Car> root = new JAXBElement<Car>(qName, Car.class, car);
 
 		jaxbMarshaller.marshal(root, stringWriter);
