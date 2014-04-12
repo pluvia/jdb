@@ -2,18 +2,11 @@ package be.jdb.pluvia.jsf.primefaces;
 
 import javax.faces.bean.ManagedBean;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-
 @ManagedBean
 public class HelloWorld {
 
-	private static final Logger logger = LoggerFactory
-			.getLogger(HelloWorld.class);
-
 	private String firstName = "John";
 	private String lastName = "Doe";
-	private String greeting;
 
 	public String getFirstName() {
 		return firstName;
@@ -31,9 +24,7 @@ public class HelloWorld {
 		this.lastName = lastName;
 	}
 
-	public String getGreeting() {
-		String result = "Hello" + " " + firstName + " " + lastName + "!";
-		logger.info(result);
-		return result;
+	public String showGreeting() {
+		return "Hello" + " " + firstName + " " + lastName + "!";
 	}
 }

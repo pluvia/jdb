@@ -14,33 +14,19 @@
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 
-		<ch.qos.logback.version>1.0.13</ch.qos.logback.version>
-		<slf4j.version>1.7.5</slf4j.version>
-
-		<jsf.version>2.2.5</jsf.version>
 		<servlet.version>3.0.1</servlet.version>
+		<jsf.version>2.2.5</jsf.version>
 		<primefaces.version>4.0</primefaces.version>
 
-		<maven-compiler-plugin.version>3.1</maven-compiler-plugin.version>
 		<jetty-maven-plugin.version>8.1.14.v20131031</jetty-maven-plugin.version>
 	</properties>
 
 	<dependencies>
-		<!-- Logging -->
+		<!-- Servlet -->
 		<dependency>
-			<groupId>ch.qos.logback</groupId>
-			<artifactId>logback-classic</artifactId>
-			<version>${ch.qos.logback.version}</version>
-		</dependency>
-		<dependency>
-			<groupId>ch.qos.logback</groupId>
-			<artifactId>logback-core</artifactId>
-			<version>${ch.qos.logback.version}</version>
-		</dependency>
-		<dependency>
-			<groupId>org.slf4j</groupId>
-			<artifactId>slf4j-api</artifactId>
-			<version>${slf4j.version}</version>
+			<groupId>javax.servlet</groupId>
+			<artifactId>javax.servlet-api</artifactId>
+			<version>${servlet.version}</version>
 		</dependency>
 		<!-- JSF -->
 		<dependency>
@@ -52,12 +38,6 @@
 			<groupId>com.sun.faces</groupId>
 			<artifactId>jsf-impl</artifactId>
 			<version>${jsf.version}</version>
-		</dependency>
-		<!-- Servlet -->
-		<dependency>
-			<groupId>javax.servlet</groupId>
-			<artifactId>javax.servlet-api</artifactId>
-			<version>${servlet.version}</version>
 		</dependency>
 		<!-- PrimeFaces -->
 		<dependency>
@@ -80,7 +60,6 @@
 					<connectors>
 						<connector implementation="org.eclipse.jetty.server.nio.SelectChannelConnector">
 							<port>9090</port>
-							<maxIdleTime>60000</maxIdleTime>
 						</connector>
 					</connectors>
 				</configuration>
