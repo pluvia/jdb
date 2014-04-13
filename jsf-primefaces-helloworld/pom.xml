@@ -8,8 +8,8 @@
 	<version>1.0</version>
 	<packaging>war</packaging>
 
-	<name>JSF - PrimeFaces HelloWorld Example</name>
-	<url>http://java-development-blog.blogspot.com</url>
+	<name>JSF - PrimeFaces HelloWorld example using Jetty</name>
+	<url>http://jdb.pluvia.be/2014/04/jsf-primefaces-helloworld-example.html</url>
 
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
