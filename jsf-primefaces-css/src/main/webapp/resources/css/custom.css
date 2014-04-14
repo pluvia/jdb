@@ -1,0 +1,25 @@
+/* Custom PrimeFaces font size */
+.ui-widget,.ui-widget .ui-widget {
+	font-size: 90% !important;
+}
+
+/* Custom p:commandButton width &amp; height*/
+.button {
+	width: 100px;
+	height: 100px;
+}
+
+/* Custom p:autoComplete width */
+.dropdown .ui-autocomplete-input {
+	width: 400px;
+}
+
+/* Custom p:tab padding */
+.tab .ui-tabs-panels .ui-tabs-panel {
+	padding: 0;
+}
+
+/* Custom p:layout without borders */
+.layout .ui-layout-unit {
+	border: none;
+}
