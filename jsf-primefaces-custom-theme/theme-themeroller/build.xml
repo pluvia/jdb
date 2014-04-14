@@ -1,0 +1,48 @@
+<?xml version="1.0"?>
+<project name="Package Primefaces Theme" default="main" basedir=".">
+
+	<!-- variables -->
+	<property name="resource.dir" value="./src/main/resources" />
+	<property name="build.dir" value="./src/main/resources" />
+
+	<!-- themeroller -->
+	<!--<property name="jquery-ui.version" value="1.10.4" />-->
+	<!--<property name="themefolder.name" value="custom-theme" />-->
+	<property name="theme.zip" value="jquery-ui-${jquery-ui.version}.custom.zip" />
+
+	<!-- primefaces -->
+	<!--<property name="yourtheme.name" value="jdb-style" />-->
+	<property name="yourtheme.dir" value="${build.dir}/META-INF/resources/primefaces-${yourtheme.name}" />
+
+	<!-- main -->
+	<target name="main" depends="themeroller">
+	</target>
+
+	<!-- themeroller -->
+	<target name="themeroller">
+		<!-- remove any previous theme dir -->
+		<delete dir="${build.dir}/META-INF" />
+
+		<!-- unzip the jquery src files -->
+		<unzip src="${resource.dir}/${theme.zip}" dest="${build.dir}/unzip" />
+
+		<!-- create the theme dir -->
+		<mkdir dir="${yourtheme.dir}" />
+
+		<!-- copy the needed jquery src files -->
+		<copy todir="${yourtheme.dir}">
+			<fileset dir="${build.dir}/unzip/jquery-ui-${jquery-ui.version}.custom/css/${themefolder.name}" />
+		</copy>
+
+		<!-- rename the jquery css file to theme.css -->
+		<move file="${yourtheme.dir}/jquery-ui-${jquery-ui.version}.custom.css" tofile="${yourtheme.dir}/theme.css" />
+		<!-- delete the jquery min.css file -->
+		<delete file="${yourtheme.dir}/jquery-ui-${jquery-ui.version}.custom.min.css" />
+		<!-- rename the image paths in the theme.css -->
+		<replace file="${yourtheme.dir}/theme.css" token="url(&quot;images" value="url(&quot;#{resource['primefaces-${yourtheme.name}:images" />
+		<replace file="${yourtheme.dir}/theme.css" token=".png" value=".png']}" />
+
+		<!-- clean the unzipped jquery src files -->
+		<delete dir="${build.dir}/unzip" />
+	</target>
+</project>

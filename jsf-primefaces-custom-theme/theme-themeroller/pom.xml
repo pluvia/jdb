@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+
+	<groupId>jdb.pluvia.be</groupId>
+	<artifactId>theme-themeroller</artifactId>
+	<version>1.0</version>
+	<packaging>jar</packaging>
+
+	<name>JSF - PrimeFaces ThemeRoller</name>
+	<url>http://java-development-blog.blogspot.com</url>
+
+	<parent>
+		<groupId>jdb.pluvia.be</groupId>
+		<artifactId>jsf-primefaces-theme</artifactId>
+		<version>1.0</version>
+	</parent>
+
+	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+
+		<maven-antrun-plugin.version>1.7</maven-antrun-plugin.version>
+
+		<!-- ANT PROPERTIES -->
+		<jquery-ui.version>1.10.4</jquery-ui.version>
+		<themefolder.name>custom-theme</themefolder.name>
+		<yourtheme.name>jdb-style</yourtheme.name>
+	</properties>
+
+	<build>
+		<resources>
+			<resource>
+				<directory>src/main/resources</directory>
+				<excludes>
+					<exclude>*.zip</exclude>
+				</excludes>
+				<filtering>false</filtering>
+			</resource>
+		</resources>
+
+		<plugins>
+			<plugin>
+				<artifactId>maven-antrun-plugin</artifactId>
+				<version>${maven-antrun-plugin.version}</version>
+				<executions>
+					<execution>
+						<phase>generate-sources</phase>
+						<goals>
+							<goal>run</goal>
+						</goals>
+						<configuration>
+							<target>
+								<ant target="main" />
+							</target>
+						</configuration>
+					</execution>
+				</executions>
+			</plugin>
+		</plugins>
+	</build>
+</project>
