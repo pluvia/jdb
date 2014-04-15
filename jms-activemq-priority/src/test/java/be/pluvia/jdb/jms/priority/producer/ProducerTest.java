@@ -10,7 +10,7 @@ import org.junit.Test;
 
 import be.pluvia.jdb.jms.priority.consumer.Consumer;
 
-public class ProducerIT {
+public class ProducerTest {
 
 	private static Consumer consumer;
 	private static Producer producer;
